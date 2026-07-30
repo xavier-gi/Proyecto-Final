@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Electrothech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>⚡ Electrothech</h1>
+            <nav class="nav-menu">
+                <a href="#seccionRegistro">Crear Cuenta</a>
+                <a href="#seccionCatalogo">Catálogo</a>
+                <a href="#seccionContacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="seccionRegistro" class="card-section">
+            <div style="display: flex; gap: 20px; margin-bottom: 20px; border-bottom: 2px solid var(--light); padding-bottom: 10px;">
+                <h2 id="tabRegistro" style="margin: 0; cursor: pointer; border: none;" onclick="alternarFormulario('registro')">Crear Cuenta</h2>
+                <h2 id="tabLogin" style="margin: 0; cursor: pointer; border: none; opacity: 0.4;" onclick="alternarFormulario('login')">Iniciar Sesión</h2>
+            </div>
+
+            <form id="formRegistro" class="form-grid">
+                <input type="text" id="regNombre" placeholder="Nombre completo" required>
+                <input type="email" id="regCorreo" placeholder="Correo electrónico" required>
+                <input type="password" id="regContrasena" placeholder="Contraseña" required>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+
+            <form id="formLogin" class="form-grid" style="display: none;">
+                <input type="email" id="loginCorreo" placeholder="Correo electrónico" required>
+                <input type="password" id="loginContrasena" placeholder="Contraseña" required>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
+            
+            <p id="msgRegistro" class="status-msg"></p>
+            <button id="btnLogout" class="btn btn-danger" style="display: none; margin-top: 10px;">Cerrar Sesión</button>
+        </section>
+
+        <section id="seccionCatalogo" class="card-section">
+            <h2>Catálogo de Electrodomésticos</h2>
+            <div class="products-grid" id="catalogo"></div>
+        </section>
+
+        <section class="card-section implicit-cart">
+            <h2>🛒 Tu Carrito</h2>
+            <div id="contenidoCarrito" class="cart-list">El carrito está vacío.</div>
+            <div class="cart-total">
+                <h3>Total: <span class="price-tag">$<span id="totalCarrito">0.00</span></span></h3>
+            </div>
+            <button id="btnFinalizar" class="btn btn-primary" style="margin-top: 15px; width: 100%;">Finalizar Compra</button>
+        </section>
+    </main>
+
+    <footer id="seccionContacto">
+        <hr>
+        <p><strong>Electrothech</strong> - Tu tienda de confianza para electrodomésticos de calidad.</p>
+        <p>Dirección: Calle 123, Quito, Ecuador</p> 
+        <p><strong>CONTACTANOS 📱📧</strong></p>
+        <p>
+            Correo: <a href="mailto:info@electrothech.com">info@electrothech.com</a>
+            <strong> | Teléfono: </strong> 0984748256
+        </p>    
+        <p>&copy; 2026 Electrothech. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
